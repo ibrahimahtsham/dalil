@@ -3349,12 +3349,6 @@
         ]
       },
       {
-        "role": "wife (5th)",
-        "name": "Zaynab bint Khuzaymah",
-        "note": "Known as Umm al-Masakin, mother of the poor. Died within months of the marriage. A genuine gap: searched across Bukhari, Muslim, the four Sunan, and Musnad Ahmad and found no authentic hadith naming her; she is attested only in seerah and tarikh works such as Ibn Sa'd's Tabaqat.",
-        "references": []
-      },
-      {
         "role": "wife (6th)",
         "name": "Umm Salamah (Hind bint Abi Umayyah)",
         "note": "A hadith in Sunan an-Nasa'i narrates how, after her waiting period ended and Abu Bakr's proposal was declined, the Prophet proposed through Umar, and her son performed the marriage at her request.",
@@ -3427,52 +3421,43 @@
         ]
       },
       {
-        "role": "wife (disputed status)",
-        "name": "Maria al-Qibtiyyah",
-        "note": "Mother of his son Ibrahim. Sources differ on whether her status was a formal wife or a concubine; not counted among the eleven Ummahat al-Mu'minin above, and left out of that numbered sequence for that reason.",
-        "references": []
-      },
-      {
-        "role": "daughter",
-        "name": "Zaynab",
-        "note": "Eldest daughter, from Khadijah.",
-        "references": []
-      },
-      {
-        "role": "daughter",
-        "name": "Ruqayyah",
-        "note": "Daughter from Khadijah.",
-        "references": []
-      },
-      {
-        "role": "daughter",
-        "name": "Umm Kulthum",
-        "note": "Daughter from Khadijah.",
-        "references": []
-      },
-      {
         "role": "daughter",
         "name": "Fatimah",
         "note": "Youngest daughter, from Khadijah, and the most prominent of his children; the only child to outlive him by a significant span.",
-        "references": []
+        "references": [
+          {
+            "type": "hadith",
+            "label": "Sahih al-Bukhari 3714",
+            "url": "https://sunnah.com/bukhari:3714",
+            "gist": "The Prophet says Fatimah is a part of him, and whoever angers her angers him."
+          }
+        ]
       },
       {
         "role": "son",
         "name": "Al-Qasim",
         "note": "From Khadijah; died in infancy. The Prophet's kunya, Abu al-Qasim, derives from him.",
-        "references": []
-      },
-      {
-        "role": "son",
-        "name": "Abdullah",
-        "note": "From Khadijah; died in infancy.",
-        "references": []
+        "references": [
+          {
+            "type": "hadith",
+            "label": "Sahih al-Bukhari 3537",
+            "url": "https://sunnah.com/bukhari:3537",
+            "gist": "After a man calls out to him as Abu al-Qasim in the marketplace, the Prophet says people may name themselves after him but not take his kunya."
+          }
+        ]
       },
       {
         "role": "son",
         "name": "Ibrahim",
-        "note": "From Maria al-Qibtiyyah; died in infancy. The only child not born to Khadijah.",
-        "references": []
+        "note": "Died in infancy; the only child not born to Khadijah. His mother is not named in Sahih al-Bukhari or Sahih Muslim.",
+        "references": [
+          {
+            "type": "hadith",
+            "label": "Sahih al-Bukhari 1043",
+            "url": "https://sunnah.com/bukhari:1043",
+            "gist": "Narrates that a solar eclipse occurred on the day the Prophet's son Ibrahim died, and the Prophet corrected people who linked the two, saying the sun and moon do not eclipse for anyone's death."
+          }
+        ]
       }
     ],
     "references": [
@@ -3565,11 +3550,6 @@
           ]
         },
         {
-          "heading": "The Boycott of Banu Hashim",
-          "narrative": "For roughly three years, the Quraysh imposed a social and economic boycott on his clan, Banu Hashim, confining them to a valley and forbidding trade, marriage, or contact with them in an attempt to force them to surrender him. This episode is attested mainly in early historical works rather than a specific numbered hadith narration, so no Quran or hadith citation is given here; it is included for completeness while being honest about that gap.",
-          "references": []
-        },
-        {
           "heading": "The Splitting of the Moon",
           "narrative": "At some point in the Makkan period, whose exact year these narrations do not fix, the Quran records that the moon split, opening Surah Al-Qamar by stating the Hour has drawn near and the moon has split. Several companions independently narrate having witnessed this, including Anas ibn Malik, Ibn Abbas, and Ibn Mas'ud, the last of whom says the Prophet told those present, 'Bear witness.'",
           "references": [
@@ -3594,13 +3574,8 @@
           ]
         },
         {
-          "heading": "The Year of Sorrow",
-          "narrative": "Within about a month of each other, in the tenth year of his prophethood, he lost both Khadijah, his first supporter, and his uncle Abu Talib, his protector against the Quraysh. Without Abu Talib's protection, the persecution against him grew more open. As with the boycott, this pairing of deaths is well attested in early historical works rather than a specific hadith narration, so no citation is given here.",
-          "references": []
-        },
-        {
           "heading": "The Journey to Ta'if",
-          "narrative": "Shortly after the Year of Sorrow, he traveled to the nearby town of Ta'if seeking support and protection, but its leaders rejected him and set their slaves and children to pelt him with stones until he bled, forcing him to retreat. In a hadith in Sahih al-Bukhari, Aisha later asked him whether he had faced a harder day than the Battle of Uhud, and he described this day as the hardest, recounting that the angel of the mountains offered to crush the town between two mountains, and he refused, hoping Allah would bring believers from among their descendants instead.",
+          "narrative": "Facing intensifying persecution in Makkah, he traveled to the nearby town of Ta'if seeking support and protection, but its leaders rejected him and set their slaves and children to pelt him with stones until he bled, forcing him to retreat. In a hadith in Sahih al-Bukhari, Aisha later asked him whether he had faced a harder day than the Battle of Uhud, and he described this day as the hardest, recounting that the angel of the mountains offered to crush the town between two mountains, and he refused, hoping Allah would bring believers from among their descendants instead.",
           "references": [
             {
               "type": "hadith",
@@ -3768,8 +3743,21 @@
         },
         {
           "heading": "Conquest of Makkah",
-          "narrative": "After the Quraysh broke the Treaty of Hudaybiyyah by aiding an attack on his allies, he marched on Makkah with a large force, entering the city around 20 Ramadan, 8 AH, with almost no resistance. He declared a general amnesty for the Makkans, had the idols around the Kaaba destroyed, and the city's population largely accepted Islam in the following period. No single Quranic passage is agreed by scholars to describe this event directly, so no Quran reference is given here, and it is well documented instead in seerah sources.",
-          "references": []
+          "narrative": "After the Quraysh broke the Treaty of Hudaybiyyah by aiding an attack on his allies, he marched on Makkah with a large force, entering the city around 20 Ramadan, 8 AH, with almost no resistance. He declared a general amnesty for the Makkans, had the idols around the Kaaba destroyed, and the city's population largely accepted Islam in the following period. As he struck down the 360 idols surrounding the Kaaba, he recited, 'Truth has come and falsehood has vanished; falsehood is ever bound to vanish.'",
+          "references": [
+            {
+              "type": "quran",
+              "label": "Surah Al-Isra 17:81",
+              "url": "https://quran.com/17/81",
+              "gist": "States that truth has come and falsehood has vanished, for falsehood is ever bound to vanish, the verse the Prophet recited while destroying the idols at the Kaaba."
+            },
+            {
+              "type": "hadith",
+              "label": "Sahih al-Bukhari 4720",
+              "url": "https://sunnah.com/bukhari:4720",
+              "gist": "Ibn Masud narrates the Prophet entering Makkah, finding 360 idols around the Kaaba, and striking them down while reciting that truth has come and falsehood has vanished."
+            }
+          ]
         },
         {
           "heading": "Battle of Hunayn",
@@ -3930,24 +3918,6 @@
     "order": 45
   },
   {
-    "id": "boycott-of-banu-hashim",
-    "name": "The Boycott of Banu Hashim",
-    "category": "event",
-    "era": "Meccan period",
-    "summary": "For roughly three years, the Quraysh imposed a social and economic boycott on the Prophet's clan, Banu Hashim, confining them to a valley (Shi'b Abi Talib) and forbidding trade, marriage, or contact with them in an attempt to force them to surrender the Prophet. A dedicated search found no specific Quran verse or authentic hadith with a confirmed citation narrating this event; it is attested mainly in early historical works, such as Ibn Hisham's seerah, rather than in a numbered hadith narration, and is included here for completeness without a reference.",
-    "references": [],
-    "order": 46
-  },
-  {
-    "id": "year-of-sorrow",
-    "name": "The Year of Sorrow (Aam al-Huzn)",
-    "category": "event",
-    "era": "Meccan period",
-    "summary": "Within about a month of each other, the Prophet lost both his wife Khadijah, his first supporter, and his uncle Abu Talib, his protector against the Quraysh, in the tenth year of his prophethood. Without Abu Talib's protection, the persecution against him grew more open, prompting his journey to Ta'if shortly after. A dedicated search found no specific Quran verse or authentic hadith with a confirmed citation narrating this pairing of deaths; it is well attested in early historical works rather than a specific hadith narration, and is included here without a reference.",
-    "references": [],
-    "order": 47
-  },
-  {
     "id": "splitting-of-the-moon",
     "name": "The Splitting of the Moon",
     "category": "event",
@@ -3973,14 +3943,14 @@
         "gist": "Anas ibn Malik narrates that the people of Makkah demanded a sign from the Prophet, and he showed them the moon split in two."
       }
     ],
-    "order": 48
+    "order": 46
   },
   {
     "id": "journey-to-taif",
     "name": "The Journey to Ta'if",
     "category": "event",
     "era": "Meccan period",
-    "summary": "Following the Year of Sorrow, the Prophet traveled to the nearby town of Ta'if seeking support and protection, but its leaders rejected him and set their slaves and children to pelt him with stones until he bled, forcing him to retreat. In a hadith in Sahih al-Bukhari, Aisha later asked him whether he had faced a harder day than the Battle of Uhud, and he described this day as the hardest, recounting that the angel of the mountains offered to crush the town between two mountains, and he refused, hoping Allah would bring believers from among their descendants instead.",
+    "summary": "Facing intensifying persecution in Makkah, the Prophet traveled to the nearby town of Ta'if seeking support and protection, but its leaders rejected him and set their slaves and children to pelt him with stones until he bled, forcing him to retreat. In a hadith in Sahih al-Bukhari, Aisha later asked him whether he had faced a harder day than the Battle of Uhud, and he described this day as the hardest, recounting that the angel of the mountains offered to crush the town between two mountains, and he refused, hoping Allah would bring believers from among their descendants instead.",
     "references": [
       {
         "type": "hadith",
@@ -3989,7 +3959,7 @@
         "gist": "Aisha asks the Prophet whether he faced a harder day than Uhud; he describes the rejection at Ta'if as harder, and declines the angel of the mountains' offer to crush the town."
       }
     ],
-    "order": 49
+    "order": 47
   },
   {
     "id": "isra-and-miraj",
@@ -4011,7 +3981,7 @@
         "gist": "The Mi'raj narration in which the five daily prayers are fixed after being reduced from fifty, following Musa's repeated advice."
       }
     ],
-    "order": 51
+    "order": 49
   },
   {
     "id": "the-hijra",
@@ -4033,7 +4003,7 @@
         "gist": "Narrates the moment in the Cave of Thawr, with the Prophet's words: 'What do you think of two, when Allah is their third?'"
       }
     ],
-    "order": 52
+    "order": 50
   },
   {
     "id": "change-of-qibla",
@@ -4055,14 +4025,14 @@
         "gist": "Al-Bara ibn Azib narrates the command to change the qibla arriving mid-prayer during Asr, and the congregation immediately turning to face the Kaaba."
       }
     ],
-    "order": 53
+    "order": 51
   },
   {
     "id": "battle-of-badr",
     "name": "Battle of Badr",
     "category": "event",
     "era": "Madinan period",
-    "order": 54,
+    "order": 52,
     "summary": "Fought on 17 Ramadan, 2 AH, this was the first major battle between the Muslims of Madinah and the Quraysh of Makkah. A Muslim force of about 300 faced a Quraysh army roughly three times its size and won decisively. The Quran attributes the victory to Allah's help, including the sending of angels, and calls the day 'the day the criterion was revealed.'",
     "references": [
       {
@@ -4084,7 +4054,7 @@
     "name": "Battle of Uhud",
     "category": "event",
     "era": "Madinan period",
-    "order": 55,
+    "order": 53,
     "summary": "Fought near Mount Uhud outside Madinah, this battle came as the Quraysh returned to avenge their defeat at Badr. The Muslims held the advantage until a group of archers left their assigned position to gather spoils, allowing the Quraysh cavalry to attack from the rear. The Muslims suffered significant losses, and the Quran addresses the battle at length, including the lessons of the archers' disobedience.",
     "references": [
       {
@@ -4100,7 +4070,7 @@
     "name": "Battle of the Trench (Khandaq)",
     "category": "event",
     "era": "Madinan period",
-    "order": 56,
+    "order": 54,
     "summary": "A confederation of Quraysh, Ghatafan, and allied tribes, numbering around 10,000, besieged Madinah. The Muslims dug a defensive trench around the exposed side of the city, a tactic unfamiliar to the Arabs, which neutralized the confederate cavalry. After a siege of roughly a month, a severe windstorm scattered the confederate camp and the siege was lifted without a pitched battle. The Quran describes the intensity of this trial for the believers.",
     "references": [
       {
@@ -4131,14 +4101,14 @@
         "gist": "A parallel narration of the same judgment and the Prophet's confirmation that it matched Allah's judgment."
       }
     ],
-    "order": 57
+    "order": 55
   },
   {
     "id": "treaty-of-hudaybiyyah",
     "name": "Treaty of Hudaybiyyah",
     "category": "event",
     "era": "Madinan period",
-    "order": 58,
+    "order": 56,
     "summary": "The Prophet set out with his companions to perform Umrah but was stopped by the Quraysh outside Makkah at Hudaybiyyah. A ten-year truce was negotiated: the Muslims would return that year without completing the Umrah but could return to perform it the following year. Many companions saw the terms as unfavorable, but Surah Al-Fath, revealed shortly after, calls the treaty 'a clear victory.'",
     "references": [
       {
@@ -4169,14 +4139,14 @@
         "gist": "Narrates the poisoned sheep incident after the conquest of Khaybar, and the Prophet spitting out the piece he had tasted."
       }
     ],
-    "order": 59
+    "order": 57
   },
   {
     "id": "water-from-the-prophets-fingers",
     "name": "Water Flowing From the Prophet's Fingers",
     "category": "event",
     "era": "Madinan period",
-    "order": 60,
+    "order": 58,
     "summary": "A bowl of water was brought to the Prophet at Az-Zawra; he placed his hand in it, and water began flowing out from between his fingers. Around three hundred people performed ablution from it.",
     "references": [
       {
@@ -4192,7 +4162,7 @@
     "name": "The Crying Palm Trunk",
     "category": "event",
     "era": "Madinan period",
-    "order": 61,
+    "order": 59,
     "summary": "The Prophet used to deliver his sermons leaning against a palm trunk in the mosque. When a pulpit was built and he began using it instead, the trunk was heard crying, and he went to it and placed his hand on it until it settled.",
     "references": [
       {
@@ -4217,23 +4187,36 @@
         "gist": "Narrates the Prophet, from Madinah, announcing the deaths of the three successive commanders at Mu'tah as they happened, with tears in his eyes."
       }
     ],
-    "order": 62
+    "order": 60
   },
   {
     "id": "conquest-of-makkah",
     "name": "Conquest of Makkah",
     "category": "event",
     "era": "Madinan period",
-    "order": 63,
-    "summary": "After the Quraysh broke the Treaty of Hudaybiyyah by aiding an attack on the Prophet's allies, he marched on Makkah with a large force, entering the city around 20 Ramadan, 8 AH, with almost no resistance. He declared a general amnesty for the Makkans, had the idols around the Kaaba destroyed, and the city's population largely accepted Islam in the following period. This event is well documented in seerah sources; no single Quranic passage is agreed by scholars to describe it directly, so no Quran reference is given here.",
-    "references": []
+    "order": 61,
+    "summary": "After the Quraysh broke the Treaty of Hudaybiyyah by aiding an attack on the Prophet's allies, he marched on Makkah with a large force, entering the city around 20 Ramadan, 8 AH, with almost no resistance. He declared a general amnesty for the Makkans, had the idols around the Kaaba destroyed, and the city's population largely accepted Islam in the following period. While the campaign as a whole is documented in seerah sources rather than a single dedicated Quran passage, the Prophet's own act of destroying the idols is directly hadith-attested, reciting Quran 17:81 as he struck them down.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Isra 17:81",
+        "url": "https://quran.com/17/81",
+        "gist": "States that truth has come and falsehood has vanished, for falsehood is ever bound to vanish, the verse the Prophet recited while destroying the idols at the Kaaba."
+      },
+      {
+        "type": "hadith",
+        "label": "Sahih al-Bukhari 4720",
+        "url": "https://sunnah.com/bukhari:4720",
+        "gist": "Ibn Masud narrates the Prophet entering Makkah, finding 360 idols around the Kaaba, and striking them down while reciting that truth has come and falsehood has vanished."
+      }
+    ]
   },
   {
     "id": "battle-of-hunayn",
     "name": "Battle of Hunayn",
     "category": "event",
     "era": "Madinan period",
-    "order": 64,
+    "order": 62,
     "summary": "Shortly after the conquest of Makkah, the Muslim army, now swelled to about 12,000 including recent Makkan converts, marched against the Hawazin and Thaqif tribes in the Hunayn valley. An ambush in a narrow pass initially threw the Muslim front ranks into disarray, but the Prophet rallied his companions and the Muslims won a decisive victory. The Quran addresses the momentary overconfidence in numbers and the divine help that followed.",
     "references": [
       {
@@ -4249,7 +4232,7 @@
     "name": "Expedition of Tabuk",
     "category": "event",
     "era": "Madinan period",
-    "order": 65,
+    "order": 63,
     "summary": "The Prophet led roughly 30,000 Muslims north to Tabuk in response to reports of a Byzantine military buildup, in the largest and most difficult expedition of his life, undertaken in extreme heat during a period of drought. No battle was fought; the Byzantine force did not appear, and the Prophet secured treaties with several regional rulers before returning to Madinah. A large portion of Surah At-Tawbah addresses this expedition.",
     "references": [
       {
@@ -4265,7 +4248,7 @@
     "name": "The Farewell Pilgrimage (Hajjat al-Wada)",
     "category": "event",
     "era": "Madinan period",
-    "order": 66,
+    "order": 64,
     "summary": "The Prophet's only Hajj as a Muslim leader. During this pilgrimage he delivered the Farewell Sermon, addressing the sanctity of life and property, the rights of women, the abolition of usury and pre-Islamic blood feuds, and the equality of believers. A hadith narrates that Umar was later asked by a Jewish man which day Quran 5:3, 'today I have perfected your religion for you,' was revealed on, and Umar answered precisely: the evening of the Day of Arafah, a Friday, during this pilgrimage. Some scholars regard it as the last verse of legal content revealed in the Quran, though that specific claim rests on later scholarly reasoning rather than being stated in the hadith itself.",
     "references": [
       {
@@ -4331,7 +4314,7 @@
         "gist": "Aisha's firsthand narration of the Prophet's final moments: leaning against her chest, dipping his hand in water, saying death has its agonies, then repeating 'with the highest companion' until he died."
       }
     ],
-    "order": 67
+    "order": 65
   },
   {
     "id": "barzakh",
@@ -4353,7 +4336,7 @@
         "gist": "Describes Pharaoh's people exposed to the Fire morning and evening before the Hour, then to the severest punishment when the Hour is established; classical tafsir reads this as evidence of punishment in the grave, a lesser torment now followed by a greater one on Judgment Day."
       }
     ],
-    "order": 68
+    "order": 66
   },
   {
     "id": "trial-and-punishment-of-the-grave",
@@ -4381,14 +4364,14 @@
         "gist": "Teaches seeking refuge with Allah, at the end of every prayer's final tashahhud, from four trials: the torment of Hell, the torment of the grave, the trial of life and death, and the Dajjal."
       }
     ],
-    "order": 69
+    "order": 67
   },
   {
     "id": "dukhan",
     "name": "Ad-Dukhan, the Smoke",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 70,
+    "order": 68,
     "summary": "Surah Ad-Dukhan warns of a day when the sky produces a visible smoke that covers mankind as a painful punishment. Commentators are genuinely divided on whether this already occurred, as a famine that struck the Quraysh during the Prophet's lifetime, or is still a coming major sign; both readings exist in the classical tafsir tradition.",
     "references": [
       {
@@ -4410,7 +4393,7 @@
     "name": "Al-Mahdi",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 71,
+    "order": 69,
     "summary": "Hadith describe a rightly-guided leader from the Prophet's family who will appear before the Hour and fill the earth with justice after it had been filled with oppression. Unlike the prophets or the descent of Isa, the Mahdi is not named in the Quran, and individual narrations about him are graded differently by hadith scholars, from weak to fair, though belief in his coming is widely held.",
     "references": [
       {
@@ -4432,7 +4415,7 @@
     "name": "Ad-Dajjal, the False Messiah",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 72,
+    "order": 70,
     "summary": "Ad-Dajjal is described in hadith as a man blind in one eye, with the word Kafir, disbeliever, written between his eyes, visible to every believer, who will emerge near the end of days claiming divinity and performing deceptive feats before his defeat.",
     "references": [
       {
@@ -4454,7 +4437,7 @@
     "name": "The Descent of Isa (AS)",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 73,
+    "order": 71,
     "summary": "Hadith describe Isa ibn Maryam (AS) descending near Damascus to pursue and kill Ad-Dajjal, after which he breaks the cross, ends the jizyah tax, and rules justly, before going on to face Yajuj wa Majuj.",
     "references": [
       {
@@ -4476,7 +4459,7 @@
     "name": "Yajuj wa Majuj (Gog and Magog)",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 74,
+    "order": 72,
     "summary": "The Quran recounts that the righteous ruler Dhul-Qarnayn built a barrier to contain Yajuj and Majuj, a people who caused corruption on the earth, which remains until it is opened by Allah's decree; hadith place their release after the descent of Isa.",
     "references": [
       {
@@ -4498,7 +4481,7 @@
     "name": "Ad-Dabbah, the Beast",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 75,
+    "order": 73,
     "summary": "The Quran mentions a creature Allah will bring forth from the earth to speak to mankind, marking a moment when the divine decree has come to pass; beyond this verse, its exact nature is not detailed in strongly authenticated narrations.",
     "references": [
       {
@@ -4520,7 +4503,7 @@
     "name": "The Sun Rising from the West",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 76,
+    "order": 74,
     "summary": "Hadith name the sun rising from the west as one of the ten major signs, after which the door of repentance closes; scholars generally regard it as the last of the worldly major signs, occurring very close to the Hour itself.",
     "references": [
       {
@@ -4542,7 +4525,7 @@
     "name": "Three Landslides and the Fire",
     "category": "endtimes",
     "era": "Major Signs",
-    "order": 77,
+    "order": 75,
     "summary": "The hadith of Hudhayfah ibn Asid al-Ghifari names three landslides, in the east, the west, and the Arabian Peninsula, and a fire emerging from the direction of Yemen that drives people to their place of gathering, among the ten signs before the Hour, without fixing a strict order between all ten.",
     "references": [
       {
@@ -4558,7 +4541,7 @@
     "name": "The Trumpet",
     "category": "endtimes",
     "era": "The Hour",
-    "order": 78,
+    "order": 76,
     "summary": "The Quran states that the Trumpet will be blown and all in the heavens and earth will fall dead except whom Allah wills, then it will be blown again and all will rise and look on. Tradition commonly names the angel Israfil as the one who blows it, though this rests on general acceptance rather than a text that names him directly.",
     "references": [
       {
@@ -4574,7 +4557,7 @@
     "name": "Resurrection and the Gathering",
     "category": "endtimes",
     "era": "The Hour",
-    "order": 79,
+    "order": 77,
     "summary": "Humanity is resurrected and gathered for reckoning after the Trumpet's blast, each person coming forth with an angel to drive them and an angel to bear witness, their earlier heedlessness removed so their sight becomes sharp that Day.",
     "references": [
       {
@@ -4590,7 +4573,7 @@
     "name": "Al-Hawd, the Pond",
     "category": "endtimes",
     "era": "The Hour",
-    "order": 80,
+    "order": 78,
     "summary": "Hadith describe a pond belonging to Muhammad (SAW) at the place of gathering, from which believers will drink before entering Paradise, fed by the river Al-Kawthar granted to him in Paradise.",
     "references": [
       {
@@ -4606,7 +4589,7 @@
     "name": "Ash-Shafa'ah, the Intercession",
     "category": "endtimes",
     "era": "The Hour",
-    "order": 81,
+    "order": 79,
     "summary": "Believers will seek someone to intercede with Allah on their behalf, going in turn to Adam, Nuh, Ibrahim, Musa, and Isa, each of whom declines and points them to the next, until they reach Muhammad (SAW), who is granted this intercession as one of his distinguishing honors on that Day.",
     "references": [
       {
@@ -4622,7 +4605,7 @@
     "name": "Al-Mizan, the Scale",
     "category": "endtimes",
     "era": "The Hour",
-    "order": 82,
+    "order": 80,
     "summary": "The Quran states that Allah will set up scales of justice for the Day of Judgment so that no soul is wronged in the slightest, weighing even a deed the weight of a mustard seed.",
     "references": [
       {
@@ -4644,7 +4627,7 @@
     "name": "Categories of People on the Day of Judgment",
     "category": "endtimes",
     "era": "The Reckoning",
-    "order": 83,
+    "order": 81,
     "summary": "The Quran describes more than one way people are divided that Day: some receive their record in their right hand and rejoice, others receive it in their left hand or behind their back in despair, and Surah Al-Waqi'ah divides mankind into three ultimate classes.",
     "references": [
       {
@@ -4690,7 +4673,7 @@
     "name": "The Believers' Light",
     "category": "endtimes",
     "era": "The Reckoning",
-    "order": 84,
+    "order": 82,
     "summary": "The Quran describes believers moving toward Paradise that Day with a light running ahead of them and in their right hands, while hypocrites who ask to share it are told to go back and seek their own; a wall with a gate is raised between them, mercy on one side, torment on the other.",
     "references": [
       {
@@ -4712,7 +4695,7 @@
     "name": "As-Sirat, the Bridge",
     "category": "endtimes",
     "era": "The Hour",
-    "order": 85,
+    "order": 83,
     "summary": "Hadith describe a bridge laid across Hell that every person must cross, thinner than a hair and sharper than a sword, fitted with hooks that seize people according to their deeds.",
     "references": [
       {
@@ -4734,7 +4717,7 @@
     "name": "Jannah and Jahannam",
     "category": "endtimes",
     "era": "Final Abodes",
-    "order": 86,
+    "order": 84,
     "summary": "These are the two final abodes to which every soul is sent once judgment is complete: Paradise, an eternal dwelling promised to those who believed and did righteous deeds, and Hell, a fire whose inhabitants are driven back whenever they try to escape.",
     "references": [
       {
@@ -4756,7 +4739,7 @@
     "name": "Deeds and Their Outcomes",
     "category": "endtimes",
     "era": "Final Abodes",
-    "order": 87,
+    "order": 85,
     "summary": "The Quran and hadith tie specific deeds to specific outcomes rather than leaving the connection abstract. These are illustrative examples, not an exhaustive list of every deed and its consequence.",
     "references": [
       {
@@ -6950,7 +6933,7 @@
         "gist": "A parallel account: a group of jinn is directed to listen to the Prophet's recitation, and they return to their people as warners calling them to believe."
       }
     ],
-    "order": 50
+    "order": 48
   },
   {
     "id": "names-of-allah",
