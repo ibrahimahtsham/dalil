@@ -1,0 +1,181 @@
+/* The Tales view: a persistent sidebar of every prophet and non-prophet
+   figure whose story has enough recorded narrative to tell, next to a
+   scrolling detail pane for whichever one is selected. */
+
+.tales-layout {
+  display: flex;
+  height: 100%;
+}
+
+.tales-sidebar {
+  flex-shrink: 0;
+  width: 260px;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border-faint);
+  padding: var(--space-lg) var(--space-md);
+  background: var(--color-bg-alt);
+}
+
+.tales-caption {
+  margin: 0 0 var(--space-lg);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-text-faint);
+}
+
+.tales-sidebar-label {
+  margin: var(--space-lg) 0 var(--space-xs);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.tales-sidebar-label:first-of-type {
+  margin-top: 0;
+}
+
+.tales-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 7px var(--space-sm);
+  cursor: pointer;
+}
+
+.tales-sidebar-item:hover {
+  background: var(--color-surface);
+}
+
+.tales-sidebar-item.active {
+  background: var(--color-surface);
+  box-shadow: inset 2px 0 0 var(--color-text);
+}
+
+.tales-sidebar-item-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.tales-sidebar-item-era {
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: var(--color-text-faint);
+}
+
+.tales-detail-scroll {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.tales-detail {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.tales-header h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 0 4px;
+}
+
+.tales-era {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--space-lg);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+}
+
+.tales-intro {
+  margin: 0 0 var(--space-lg);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.tales-open-entry {
+  display: inline-block;
+  margin: 0 0 var(--space-xl);
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.tales-open-entry:hover {
+  color: var(--color-text);
+}
+
+.tales-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.tales-chapter {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-faint);
+}
+
+.tales-chapter:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.tales-chapter h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 var(--space-sm);
+}
+
+.tales-narrative {
+  margin: 0 0 var(--space-md);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--color-text);
+  max-width: 66ch;
+}
+
+.tales-chapter .ref-list {
+  gap: var(--space-sm);
+}
+
+@media (max-width: 720px) {
+  .tales-layout {
+    flex-direction: column;
+  }
+
+  .tales-sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 40%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-faint);
+  }
+
+  .tales-detail-scroll {
+    flex: 1;
+    min-height: 0;
+  }
+}

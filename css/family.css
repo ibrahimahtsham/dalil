@@ -1,0 +1,168 @@
+#family-view .view-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2xl) var(--space-md) var(--space-2xl);
+}
+
+.family-content {
+  max-width: 720px;
+  width: 100%;
+}
+
+.family-caption {
+  margin: 0 0 var(--space-xl);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-faint);
+}
+
+.family-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+/* This is a <button>; unlike a plain div, browsers give buttons their own
+   default text color instead of inheriting the page's, so it must be set
+   explicitly here or it silently ignores the dark theme. */
+.family-index-card {
+  text-align: left;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-faint);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s var(--ease-standard);
+}
+
+.family-index-card:hover {
+  border-color: var(--color-border-soft);
+  transform: translateY(-2px);
+}
+
+.family-index-card h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.family-index-era {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--space-sm);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+}
+
+.family-index-count {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+}
+
+.family-back {
+  display: inline-block;
+  margin: 0 0 var(--space-lg);
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.family-back:hover {
+  color: var(--color-text);
+}
+
+/* Graphical family diagram: a root card for the prophet, a trunk line, and
+   a connected group of family member cards below. HTML/CSS rather than the
+   SVG tree, so every card has room for a real reference link, not just a
+   name. */
+.family-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-xl);
+}
+
+.family-diagram-root {
+  text-align: center;
+  background: var(--color-node-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: 14px 22px;
+  min-width: 180px;
+}
+
+.family-diagram-root-name {
+  margin: 0 0 3px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--color-node-text);
+}
+
+.family-diagram-root-era {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+}
+
+.family-diagram-trunk {
+  width: 1px;
+  height: 30px;
+  background: var(--color-border-soft);
+}
+
+.family-diagram-branches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg) var(--space-md);
+  width: 100%;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.family-diagram-card {
+  width: 240px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-faint);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.family-diagram-role {
+  margin: 0 0 1px;
+  font-size: 11px;
+  color: var(--color-text-faint);
+  text-transform: capitalize;
+}
+
+.family-diagram-name {
+  margin: 0 0 5px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--color-text);
+}
+
+.family-diagram-note {
+  margin: 0 0 var(--space-sm);
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--color-text-muted);
+}

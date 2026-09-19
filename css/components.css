@@ -1,0 +1,307 @@
+/* Cross-links: "Also in" chips pointing to every other view a single
+   entry appears in, and the brief highlight a jump lands on. */
+.entry-locations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--space-lg);
+}
+
+.entry-locations-label {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--color-text-faint);
+  margin-right: 2px;
+}
+
+.entry-location-link {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 3px 10px;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.entry-location-link:hover,
+.entry-location-link:focus-visible {
+  color: var(--color-text);
+  border-color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+@keyframes cross-link-flash {
+  0%,
+  100% {
+    box-shadow: none;
+  }
+  25%,
+  75% {
+    box-shadow: 0 0 0 2px var(--color-text);
+  }
+}
+
+.cross-link-target {
+  animation: cross-link-flash 1.5s ease;
+  border-radius: var(--radius-md);
+}
+
+/* Reference links */
+.ref-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.ref-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--color-link);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-border-faint);
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.ref-link:hover {
+  border-color: var(--color-text);
+  opacity: 0.75;
+}
+
+.ref-link-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.ref-gist {
+  font-family: var(--font-base);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+/* Annotated references are the primary content on topic pages (Beliefs,
+   Pillars, Rights, Law), not a footnote, so they get real card treatment
+   instead of the plain underlined-link style used elsewhere. */
+.ref-link-annotated {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border-faint);
+  border-radius: var(--radius-md);
+  border-bottom: 1px solid var(--color-border-faint);
+}
+
+.ref-link-annotated:hover {
+  border-color: var(--color-border-soft);
+  opacity: 1;
+  background: var(--color-bg-alt);
+}
+
+.ref-link .ref-tag {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-base);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 3px;
+  padding: 2px 7px 2px 5px;
+  color: var(--color-text-muted);
+}
+
+/* Lineage note */
+.lineage-note {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* Side panel */
+#detail-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 380px;
+  max-width: 88vw;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border-faint);
+  box-shadow: -8px 0 24px var(--color-shadow);
+  transform: translateX(100%);
+  transition: transform 0.28s var(--ease-standard);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+#detail-panel.open {
+  transform: translateX(0);
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  border-bottom: 1px solid var(--color-border-faint);
+}
+
+.panel-header h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 2px 0 0;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.panel-header .panel-era {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--color-text-faint);
+}
+
+.panel-close {
+  background: transparent;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.panel-close:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.panel-body {
+  padding: var(--space-lg);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.panel-body p.summary {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 var(--space-xl);
+}
+
+.section-label {
+  font-size: 13px;
+  color: var(--color-text-faint);
+  margin: 0 0 var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-faint);
+  font-weight: 500;
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.family-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: 0 0 var(--space-xl);
+}
+
+.family-item {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-faint);
+}
+
+.family-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.family-role {
+  margin: 0 0 1px;
+  font-size: 11px;
+  color: var(--color-text-faint);
+  text-transform: capitalize;
+}
+
+.family-name {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 15px;
+}
+
+.family-note {
+  margin: 0 0 var(--space-sm);
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.entry-icon {
+  color: var(--color-text-faint);
+}
+
+.proven-dates {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: 0 0 var(--space-xl);
+}
+
+.proven-date {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-faint);
+}
+
+.proven-date:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.proven-date-label {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#panel-backdrop {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 9;
+  display: none;
+}
+
+#panel-backdrop.open {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  #detail-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+}

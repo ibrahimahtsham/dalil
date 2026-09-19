@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--tab-height);
+  padding: 0 var(--space-lg);
+  border-bottom: 1px solid var(--color-border-faint);
+  background: var(--color-surface);
+  flex-shrink: 0;
+  gap: var(--space-lg);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+header.app-header h1 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/*
+ * The tab count grows as reference sections are added, so this scrolls
+ * sideways rather than wrapping to a second row or shoving the search and
+ * theme controls off the end: min-width 0 lets it shrink below its content
+ * width inside the header flex row, and the scrollbar is hidden since the
+ * tabs are the only affordance that matters here.
+ */
+nav.tabs {
+  display: flex;
+  gap: var(--space-md);
+  margin-right: auto;
+  padding-left: var(--space-xl);
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+nav.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * Marks the seam between the five history/genealogy views (Tree through
+ * Journey) and the ten subject-reference tabs (Quran through End Times),
+ * so the row reads as two related groups instead of one flat list a
+ * person has to scroll sideways through blind.
+ */
+.tabs-divider {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 1px;
+  margin: var(--space-sm) 2px;
+  background: var(--color-border-faint);
+}
+
+nav.tabs button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 2px;
+  background: transparent;
+  color: var(--color-text-faint);
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.18s var(--ease-standard), border-color 0.18s var(--ease-standard);
+}
+
+nav.tabs button:hover {
+  color: var(--color-text);
+}
+
+nav.tabs button.active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-text);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+main.view-container {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.view {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.view-scroll {
+  height: 100%;
+  overflow: auto;
+}
+
+@media (max-width: 640px) {
+  header.app-header {
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
+  nav.tabs {
+    padding-left: 0;
+    gap: var(--space-md);
+  }
+
+  .theme-toggle {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  /* Reclaims header width for the scrolling tabs and the search input,
+     the two things worth the room on a narrow screen; the sun/moon icon
+     alone still says what the button does. */
+  #theme-toggle-label {
+    display: none;
+  }
+}

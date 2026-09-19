@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalil</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/tree.css" />
+  <link rel="stylesheet" href="css/timeline.css" />
+  <link rel="stylesheet" href="css/family.css" />
+  <link rel="stylesheet" href="css/tales.css" />
+  <link rel="stylesheet" href="css/journey.css" />
+  <link rel="stylesheet" href="css/topics.css" />
+  <link rel="stylesheet" href="css/search.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="brand">
+        <h1>Dalil</h1>
+      </div>
+      <nav class="tabs" aria-label="View">
+        <button data-view="tree" class="active" type="button">Tree</button>
+        <button data-view="timeline" type="button">Timeline</button>
+        <button data-view="family" type="button">Family</button>
+        <button data-view="tales" type="button">Tales</button>
+        <button data-view="journey" type="button">Journey</button>
+        <span class="tabs-divider" aria-hidden="true"></span>
+        <button data-view="quran" type="button">Quran</button>
+        <button data-view="beliefs" type="button">Beliefs</button>
+        <button data-view="angels" type="button">Angels</button>
+        <button data-view="signs" type="button">Signs</button>
+        <button data-view="pillars" type="button">Pillars</button>
+        <button data-view="duas" type="button">Duas</button>
+        <button data-view="character" type="button">Character</button>
+        <button data-view="rights" type="button">Rights</button>
+        <button data-view="law" type="button">Law</button>
+        <button data-view="endtimes" type="button">End Times</button>
+      </nav>
+      <div id="search-widget" class="search-widget">
+        <button id="search-toggle" class="search-toggle" type="button" aria-label="Search"></button>
+        <input id="search-input" class="search-input" type="text" placeholder="Search everything&hellip;" autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button">
+        <span id="theme-toggle-icon"></span>
+        <span id="theme-toggle-label">Dark mode</span>
+      </button>
+    </header>
+
+    <main class="view-container">
+      <section id="tree-view" class="view active">
+        <button id="tree-caption-toggle" class="tree-caption-toggle" type="button" aria-label="Show legend" aria-expanded="false">?</button>
+        <ul id="tree-caption" class="tree-caption">
+          <li>Rows run chronologically, earliest at top, Muhammad (SAW) last.</li>
+          <li>A dashed line shows established descent, not always a direct father and son; prophets with no line have no established lineage back to this chain.</li>
+          <li>Where the order between two prophets isn't fixed by the Quran or hadith, they share a row rather than a false ranking.</li>
+          <li>A node with a + has recorded family; click it to open their family in full.</li>
+          <li>A node with an i explains why it's placed on this particular row; click it for a short note in place.</li>
+          <li>A node with a clock has a duration or age stated directly in the Quran or hadith; click it to see the number and its source.</li>
+          <li>Select a name for full details.</li>
+        </ul>
+        <svg id="tree-svg">
+          <g id="tree-viewport">
+            <g id="tree-links"></g>
+            <g id="tree-nodes"></g>
+          </g>
+        </svg>
+        <div class="tree-controls">
+          <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+          <button id="zoom-out" type="button" aria-label="Zoom out">&minus;</button>
+          <button id="zoom-reset" type="button" aria-label="Reset view">&#8635;</button>
+        </div>
+      </section>
+
+      <section id="timeline-view" class="view">
+        <div class="view-scroll">
+          <div id="timeline-track" class="timeline-track"></div>
+        </div>
+      </section>
+
+      <section id="family-view" class="view">
+        <div class="view-scroll">
+          <div id="family-content" class="family-content"></div>
+        </div>
+      </section>
+
+      <section id="tales-view" class="view">
+        <div class="tales-layout">
+          <aside id="tales-sidebar" class="tales-sidebar"></aside>
+          <div class="tales-detail-scroll">
+            <div id="tales-detail" class="tales-detail"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey-view" class="view">
+        <div class="view-scroll">
+          <p class="journey-caption">Where every soul comes from, what happens across this life, and how it plays out in the end. Each box points to a fully cited entry; boxes side by side mark where the outcome depends on deeds.</p>
+          <div id="journey-content" class="journey-content"></div>
+        </div>
+      </section>
+
+      <section id="quran-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="quran-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="beliefs-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="beliefs-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="angels-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="angels-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="signs-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="signs-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="pillars-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="pillars-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="duas-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="duas-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="character-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="character-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="rights-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="rights-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="law-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="law-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <section id="endtimes-view" class="view topic-view">
+        <div class="view-scroll">
+          <div id="endtimes-content" class="topic-content"></div>
+        </div>
+      </section>
+
+      <div id="panel-backdrop"></div>
+      <aside id="detail-panel" aria-hidden="true">
+        <div class="panel-header">
+          <div>
+            <p id="panel-era" class="panel-era"></p>
+            <h2 id="panel-name"></h2>
+          </div>
+          <button id="panel-close" class="panel-close" type="button" aria-label="Close panel">&times;</button>
+        </div>
+        <div id="panel-body" class="panel-body"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

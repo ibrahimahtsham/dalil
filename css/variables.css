@@ -1,0 +1,73 @@
+:root {
+  /* Strict grayscale: every value below is R=G=B, no hue, in either theme. */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f3f3f3;
+  --color-surface: #ffffff;
+  --color-border: #1a1a1a;
+  --color-border-soft: #d6d6d6;
+  --color-border-faint: #e8e8e8;
+  --color-text: #111111;
+  --color-text-muted: #5c5c5c;
+  --color-text-faint: #8a8a8a;
+  --color-accent: #000000;
+  --color-node-bg: #ffffff;
+  --color-node-text: #111111;
+  --color-link: #000000;
+  --color-shadow: rgba(0, 0, 0, 0.12);
+  --color-shadow-strong: rgba(0, 0, 0, 0.22);
+
+  --font-display: "Newsreader", "Georgia", "Times New Roman", serif;
+  --font-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 15px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --tab-height: 64px;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0a0a0a;
+    --color-bg-alt: #151515;
+    --color-surface: #111111;
+    --color-border: #ededed;
+    --color-border-soft: #3a3a3a;
+    --color-border-faint: #262626;
+    --color-text: #ededed;
+    --color-text-muted: #a3a3a3;
+    --color-text-faint: #707070;
+    --color-accent: #ffffff;
+    --color-node-bg: #111111;
+    --color-node-text: #ededed;
+    --color-link: #ffffff;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-shadow-strong: rgba(0, 0, 0, 0.7);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #151515;
+  --color-surface: #111111;
+  --color-border: #ededed;
+  --color-border-soft: #3a3a3a;
+  --color-border-faint: #262626;
+  --color-text: #ededed;
+  --color-text-muted: #a3a3a3;
+  --color-text-faint: #707070;
+  --color-accent: #ffffff;
+  --color-node-bg: #111111;
+  --color-node-text: #ededed;
+  --color-link: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow-strong: rgba(0, 0, 0, 0.7);
+}

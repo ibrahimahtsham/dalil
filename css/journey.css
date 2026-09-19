@@ -1,0 +1,197 @@
+/* The Journey view: a vertical flowchart from the primordial covenant
+   through this life, death, and the Hour, forking briefly wherever the
+   next step depends on deeds, then converging again. */
+
+#journey-view .view-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2xl) var(--space-md) var(--space-2xl);
+}
+
+.journey-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.journey-caption {
+  max-width: 480px;
+  margin: 0 auto var(--space-lg);
+  padding: 0 var(--space-md);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-faint);
+}
+
+.journey-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+}
+
+.journey-stage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 420px;
+  max-width: 100%;
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.journey-connector,
+.journey-fork-row {
+  width: 420px;
+  max-width: 100%;
+}
+
+.journey-stage:hover,
+.journey-stage:focus-visible {
+  border-color: var(--color-border);
+  transform: translateY(-1px);
+}
+
+.journey-stage .icon {
+  flex-shrink: 0;
+  color: var(--color-text-faint);
+}
+
+.journey-stage-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.journey-stage-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.journey-stage-era {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--color-text-faint);
+}
+
+/* A side note (currently just "Deeds and Their Outcomes"), not a step in
+   the sequence itself, so it sits beside its stage rather than in line
+   with it, joined by a light dashed connector instead of the main track's
+   solid one. */
+.journey-annotation-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-xs);
+  width: auto;
+  max-width: 100%;
+}
+
+.journey-annotation-wrap .journey-stage {
+  width: 300px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.journey-stage-small {
+  width: 150px;
+  flex-shrink: 0;
+  padding: var(--space-sm);
+  gap: 6px;
+}
+
+.journey-stage-small .journey-stage-name {
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+.journey-stage-small .journey-stage-era {
+  font-size: 9.5px;
+}
+
+.journey-annotation-dash {
+  width: 26px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.journey-annotation-dash-path {
+  fill: none;
+  stroke: var(--color-text-faint);
+  stroke-width: 1.25;
+  stroke-dasharray: 2 4;
+}
+
+.journey-connector {
+  height: 30px;
+}
+
+.journey-connector-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.journey-connector-path {
+  fill: none;
+  stroke: var(--color-border-soft);
+  stroke-width: 1.5;
+}
+
+.journey-fork-row {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.journey-fork-option {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-alt);
+  border: 1px dashed var(--color-border-soft);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 12.5px;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.journey-fork-option:hover,
+.journey-fork-option:focus-visible {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+
+@media (max-width: 520px) {
+  .journey-fork-row {
+    flex-direction: column;
+  }
+
+  .journey-annotation-wrap {
+    flex-direction: column;
+  }
+
+  .journey-annotation-wrap .journey-stage,
+  .journey-stage-small {
+    width: 100%;
+  }
+
+  .journey-annotation-dash {
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,147 @@
+.search-widget {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.search-toggle:hover {
+  color: var(--color-text);
+}
+
+.search-widget.open .search-toggle {
+  color: var(--color-text);
+  border-color: var(--color-border-soft);
+}
+
+.search-input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  margin-left: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 13px;
+  height: 32px;
+  transition: width 0.2s var(--ease-standard), opacity 0.15s ease, padding 0.2s ease, margin 0.2s ease;
+}
+
+.search-widget.open .search-input {
+  width: 200px;
+  opacity: 1;
+  padding: 0 var(--space-sm);
+  margin-left: var(--space-xs);
+  border-color: var(--color-border-soft);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  top: calc(100% + var(--space-xs));
+  right: 0;
+  width: 320px;
+  max-width: 80vw;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px var(--color-shadow);
+  z-index: 20;
+}
+
+.search-results.open {
+  display: block;
+}
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  background: transparent;
+  color: var(--color-text);
+  border: none;
+  border-bottom: 1px solid var(--color-border-faint);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover,
+.search-result.active {
+  background: var(--color-bg-alt);
+}
+
+.search-empty {
+  margin: 0;
+  padding: var(--space-md);
+  font-size: 13px;
+  color: var(--color-text-faint);
+  text-align: center;
+}
+
+.search-result-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+}
+
+.search-result-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 640px) {
+  .search-widget.open .search-input {
+    width: 42vw;
+    min-width: 150px;
+  }
+
+  /*
+   * Anchoring to the search widget's own right edge (the desktop rule)
+   * breaks on mobile: the widget isn't the last thing in the header, the
+   * theme toggle sits to its right, so a wide dropdown anchored there
+   * would run off the left edge of the screen. Anchor to the viewport
+   * instead, as a full-width sheet under the header.
+   */
+  .search-results {
+    position: fixed;
+    top: var(--tab-height);
+    left: var(--space-sm);
+    right: var(--space-sm);
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - var(--tab-height) - var(--space-md));
+  }
+}

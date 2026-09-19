@@ -1,0 +1,405 @@
+#tree-view {
+  background: var(--color-bg);
+}
+
+#tree-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+#tree-svg.panning {
+  cursor: grabbing;
+}
+
+.tree-caption {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+  max-width: 340px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text-faint);
+  pointer-events: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tree-caption li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.tree-caption li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-faint);
+}
+
+/*
+ * Hidden by default; only shown (see the mobile media query below) as
+ * the tap target that reveals .tree-caption once it stops being an
+ * always-visible list, so a screen too narrow to fit both it and the
+ * zoom controls without overlapping doesn't have to choose which one to
+ * squeeze.
+ */
+.tree-caption-toggle {
+  display: none;
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 6;
+  width: 32px;
+  height: 32px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.tree-caption-toggle:hover,
+.tree-caption-toggle[aria-expanded="true"] {
+  border-color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+@media (max-width: 640px) {
+  .tree-caption-toggle {
+    display: block;
+  }
+
+  .tree-caption {
+    display: none;
+    top: calc(var(--space-md) + 38px);
+    max-width: calc(100vw - var(--space-md) * 2);
+    width: 260px;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px var(--color-shadow);
+  }
+
+  .tree-caption.open {
+    display: flex;
+    pointer-events: auto;
+  }
+}
+
+.tree-controls {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  z-index: 5;
+}
+
+.tree-controls button {
+  width: 32px;
+  height: 32px;
+  font-family: var(--font-base);
+  font-size: 16px;
+  line-height: 1;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.tree-controls button:hover {
+  border-color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+.tree-link {
+  fill: none;
+  stroke: var(--color-text-muted);
+  stroke-width: 2;
+  stroke-dasharray: 3 4;
+  stroke-linecap: round;
+}
+
+/* A link spanning more than one generation row (this data's lineage often
+   skips several, e.g. Isa's line back to Ishaq): routed through a side
+   lane by tree.js so it can never cross another node or link, and styled
+   lighter, more loosely dashed, and side-entering here so it reads at a
+   glance as a long-distance lineage note rather than a direct link. Still
+   dark enough to read clearly on its own; the distinction from .tree-link
+   is relative, not a fade into the background. */
+.tree-link-skip {
+  stroke: var(--color-text-faint);
+  stroke-width: 1.75;
+  stroke-dasharray: 2 6;
+  stroke-linejoin: round;
+}
+
+.tree-node {
+  cursor: pointer;
+}
+
+/*
+ * The entrance animation lives on this inner wrapper, never on .tree-node
+ * itself: that outer <g> carries an SVG `transform="translate(x,y)"`
+ * positioning attribute, and a CSS `transform` on the same element would
+ * replace that attribute outright instead of composing with it.
+ */
+.tree-node-visual {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tree-node-in 0.5s var(--ease-standard) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tree-node-visual {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes tree-node-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tree-node rect {
+  fill: var(--color-node-bg);
+  stroke: var(--color-border);
+  stroke-width: 1;
+  transition: stroke-width 0.15s ease, transform 0.15s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.tree-node:hover rect,
+.tree-node:focus-visible rect {
+  stroke-width: 1.5;
+  transform: translateY(-2px);
+}
+
+.tree-node:focus-visible {
+  outline: none;
+}
+
+.tree-node:focus-visible rect {
+  stroke-width: 2;
+}
+
+.tree-node.selected rect {
+  stroke-width: 2;
+  fill: var(--color-text);
+}
+
+.tree-node.selected text {
+  fill: var(--color-bg);
+}
+
+.tree-node.selected .tree-node-era {
+  fill: var(--color-bg-alt);
+}
+
+.tree-node text {
+  fill: var(--color-node-text);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 500;
+  pointer-events: none;
+  user-select: none;
+  transition: fill 0.15s ease;
+}
+
+.tree-node .tree-node-era {
+  fill: var(--color-text-faint);
+  font-family: var(--font-base);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/*
+ * Family badge: a fixed "+" indicating a prophet has recorded family.
+ * Unlike the toggle this used to be, it always navigates to the Family
+ * view rather than expanding in place, this tiny SVG node has no room to
+ * show real reference links, so that content lives in a full-width view
+ * instead. See buildFamilyBadge in tree.js.
+ */
+.tree-family-badge {
+  cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.tree-family-badge:hover,
+.tree-family-badge:focus-visible {
+  transform: scale(1.12);
+  outline: none;
+}
+
+.tree-family-badge circle {
+  fill: var(--color-node-bg);
+  stroke: var(--color-border);
+  stroke-width: 1.25;
+}
+
+.tree-family-badge line {
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.tree-node.selected .tree-family-badge circle {
+  fill: var(--color-text);
+  stroke: var(--color-bg);
+}
+
+.tree-node.selected .tree-family-badge line {
+  stroke: var(--color-bg);
+}
+
+/*
+ * Note badge: a small "i" indicating this node's row placement in the
+ * tree needed real reasoning (a chronology drawn from a specific verse, or
+ * a tied row the text doesn't order), opening a short floating note right
+ * on the tree instead of sending the person elsewhere. See buildNoteBadge
+ * and createNoteTooltip in tree.js. Positioned top-left, opposite the
+ * family badge, so the two never collide.
+ */
+.tree-note-badge {
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.tree-note-badge:hover,
+.tree-note-badge:focus-visible {
+  transform: scale(1.12);
+  color: var(--color-text);
+  outline: none;
+}
+
+.tree-note-badge circle:first-child {
+  fill: var(--color-node-bg);
+  stroke: currentColor;
+  stroke-width: 1.25;
+}
+
+.tree-note-badge line {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.tree-node.selected .tree-note-badge {
+  color: var(--color-bg);
+}
+
+.tree-node.selected .tree-note-badge circle:first-child {
+  fill: var(--color-text);
+}
+
+/*
+ * Date badge: a small clock face indicating this node's entry has at
+ * least one Quran- or hadith-stated number (a duration or an age), shown
+ * in the same floating tooltip style as the note badge. Positioned
+ * top-right, the corner neither the family badge (bottom-right) nor the
+ * note badge (top-left) uses. See buildDateBadge and createDateTooltip
+ * in tree.js.
+ */
+.tree-date-badge {
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.tree-date-badge:hover,
+.tree-date-badge:focus-visible {
+  transform: scale(1.12);
+  color: var(--color-text);
+  outline: none;
+}
+
+.tree-date-badge circle {
+  fill: var(--color-node-bg);
+  stroke: currentColor;
+  stroke-width: 1.25;
+}
+
+.tree-date-badge line {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.tree-node.selected .tree-date-badge {
+  color: var(--color-bg);
+}
+
+.tree-node.selected .tree-date-badge circle {
+  fill: var(--color-text);
+}
+
+.tree-note-tooltip {
+  position: fixed;
+  z-index: 20;
+  width: 260px;
+  max-width: calc(100vw - 24px);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px var(--color-shadow);
+}
+
+.tree-note-tooltip-text {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.tree-note-tooltip-text:last-child {
+  margin-bottom: 0;
+}
+
+.tree-note-tooltip-ref {
+  display: block;
+  font-size: 11px;
+  color: var(--color-link);
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.tree-note-tooltip-ref:hover {
+  text-decoration: underline;
+}

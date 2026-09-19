@@ -1,0 +1,151 @@
+/* Shared layout for every "topic page" tab: Quran, Signs, Angels, Beliefs,
+   Pillars, Duas, Character, Rights, Law, End Times. Each entry is a short
+   intro plus a real reference index (a pointer into the Quran and hadith,
+   not a reproduction of their content), meant to be scanned as a directory
+   rather than read as an article.
+
+   Keyed off the .topic-view class rather than a list of section ids, so a
+   new topic tab is centered the moment its section carries the class,
+   with no second place to remember to update. */
+
+.topic-view .view-scroll {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md) var(--space-2xl);
+}
+
+.topic-content {
+  max-width: 640px;
+  width: 100%;
+}
+
+/*
+ * Divides a long topic tab into labeled clusters (e.g. Duas grouped by
+ * occasion). Only rendered by topicPage.js past a length/diversity
+ * threshold, so a short or single-theme tab (Signs, Character, Angels)
+ * stays a plain flat list rather than gaining an empty-feeling lone
+ * heading.
+ */
+.topic-group-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-text-faint);
+  margin: 0 0 var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-faint);
+  scroll-margin-top: var(--space-lg);
+}
+
+.topic-group-heading:not(:first-child) {
+  margin-top: var(--space-2xl);
+}
+
+.topic-group-count {
+  font-family: var(--font-base);
+  font-style: normal;
+  font-size: 11px;
+  color: var(--color-text-faint);
+  opacity: 0.75;
+}
+
+/*
+ * A row of jump links at the top of a grouped page (Duas, Beliefs, and
+ * the like), letting a long tab be scanned and jumped into instead of
+ * only scrolled through blind, which matters most on mobile where that
+ * scroll is a lot of thumb movement.
+ */
+.topic-jumplinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border-faint);
+}
+
+.topic-jumplink {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 11px;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.topic-jumplink:hover,
+.topic-jumplink:focus-visible {
+  color: var(--color-text);
+  border-color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+.topic-card {
+  padding-bottom: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-faint);
+}
+
+.topic-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.topic-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0 0 3px;
+}
+
+.topic-era {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--space-md);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+}
+
+.topic-intro {
+  margin: 0 0 var(--space-md);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.topic-card .ref-list {
+  gap: var(--space-sm);
+}
+
+.topic-section-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 15px;
+  margin: var(--space-lg) 0 var(--space-xs);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-faint);
+}
+
+@media (max-width: 640px) {
+  .topic-view .view-scroll {
+    padding: var(--space-lg) var(--space-md) var(--space-lg);
+  }
+
+  .topic-card h2 {
+    font-size: 20px;
+  }
+
+  .topic-jumplinks {
+    margin-bottom: var(--space-xl);
+  }
+}
