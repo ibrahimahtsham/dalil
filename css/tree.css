@@ -157,6 +157,13 @@
   grid-template-columns: repeat(3, 32px);
   grid-template-rows: repeat(2, 32px);
   gap: 2px;
+  /* Held, repeated taps are exactly the input pattern that gets
+     misread as a text-selection drag; nothing on these buttons is
+     text worth selecting anyway. -webkit-touch-callout additionally
+     stops iOS Safari's long-press callout (copy/lookup menu). */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .tree-joystick button {
@@ -168,6 +175,9 @@
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .tree-joystick button:active {
