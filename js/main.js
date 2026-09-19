@@ -193,6 +193,41 @@ function initTreeControls(panzoom, center) {
       toggle.setAttribute("aria-expanded", "false");
     }
   });
+
+  // The joystick (mobile only, see tree.css): each button pans steadily
+  // in its direction for as long as it's held, rather than one nudge per
+  // tap, since it exists specifically as a more reliable stand-in for a
+  // touch drag on a screen where that drag has to compete with the
+  // browser's own scroll and pull-to-refresh gestures.
+  const PAN_STEP = 10;
+  const PAN_DIRECTIONS = { up: [0, PAN_STEP], down: [0, -PAN_STEP], left: [PAN_STEP, 0], right: [-PAN_STEP, 0] };
+  let panRafId = null;
+
+  const startPanning = (dir) => {
+    const [dx, dy] = PAN_DIRECTIONS[dir];
+    const tick = () => {
+      panzoom.panBy(dx, dy);
+      panRafId = requestAnimationFrame(tick);
+    };
+    panRafId = requestAnimationFrame(tick);
+  };
+  const stopPanning = () => {
+    if (panRafId !== null) {
+      cancelAnimationFrame(panRafId);
+      panRafId = null;
+    }
+  };
+
+  document.querySelectorAll("#tree-joystick button[data-dir]").forEach((btn) => {
+    const dir = btn.dataset.dir;
+    btn.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      startPanning(dir);
+    });
+    btn.addEventListener("pointerup", stopPanning);
+    btn.addEventListener("pointerleave", stopPanning);
+    btn.addEventListener("pointercancel", stopPanning);
+  });
 }
 
 /**

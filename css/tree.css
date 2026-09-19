@@ -7,6 +7,16 @@
   width: 100%;
   height: 100%;
   cursor: grab;
+  /*
+   * Without this, a touch drag on the tree is ambiguous to the browser:
+   * pointer events fire for it (so panning works), but the browser's own
+   * touch gestures, page scroll and pull-to-refresh chief among them, are
+   * still live on the same gesture and can win, which is what turns
+   * "drag up to pan" into "the page reloads." This says the app is
+   * handling 100% of what a touch does here, so the browser doesn't
+   * default to anything else on the OS's behalf.
+   */
+  touch-action: none;
 }
 
 #tree-svg.panning {
@@ -129,6 +139,67 @@
 .tree-controls button:hover {
   border-color: var(--color-text);
   background: var(--color-bg-alt);
+}
+
+/*
+ * Hidden by default, shown only below the mobile breakpoint (see the
+ * media query below): a compass of four hold-to-pan buttons, a more
+ * reliable way to move around the tree on a phone than a touch drag,
+ * which has to compete with page scroll and pinch-to-zoom-the-page for
+ * the same gesture even with touch-action set on the SVG.
+ */
+.tree-joystick {
+  display: none;
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-md);
+  z-index: 5;
+  grid-template-columns: repeat(3, 32px);
+  grid-template-rows: repeat(2, 32px);
+  gap: 2px;
+}
+
+.tree-joystick button {
+  font-size: 12px;
+  line-height: 1;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.tree-joystick button:active {
+  border-color: var(--color-text);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.tree-joystick button[data-dir="up"] {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.tree-joystick button[data-dir="left"] {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.tree-joystick button[data-dir="right"] {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.tree-joystick button[data-dir="down"] {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@media (max-width: 640px) {
+  .tree-joystick {
+    display: grid;
+  }
 }
 
 .tree-link {

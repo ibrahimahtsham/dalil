@@ -60,8 +60,30 @@ export function renderTree(container, entries, onSelect, onOpenFamily) {
 
   const panzoom = new PanZoom(svg, viewport, { minScale: 0.3, maxScale: 2.5 });
 
+  // On a phone-width screen there usually isn't room to show even one row
+  // at a readable size while also seeing the tree's overall shape, and
+  // panning to find your way around a 25-node genealogy sight unseen is
+  // a bad first impression. So there, start zoomed out enough to fit the
+  // whole tree, at whatever scale that takes (clamped to what the
+  // controls allow); on a wider screen this only ever reduces scale below
+  // 1, so desktop's fixed "start at 1, top-aligned" behavior is untouched.
+  const isMobileViewport = () => window.matchMedia("(max-width: 640px)").matches;
+
   const center = () => {
     const containerRect = container.getBoundingClientRect();
+
+    if (isMobileViewport() && bounds.width > 0 && bounds.height > 0) {
+      const fitScale = Math.min(
+        (containerRect.width - 24) / bounds.width,
+        (containerRect.height - 24) / bounds.height
+      );
+      panzoom.scale = Math.min(1, Math.max(panzoom.minScale, Math.min(panzoom.maxScale, fitScale)));
+      panzoom.x = (containerRect.width - bounds.width * panzoom.scale) / 2 - bounds.minX * panzoom.scale;
+      panzoom.y = (containerRect.height - bounds.height * panzoom.scale) / 2 - bounds.minY * panzoom.scale;
+      panzoom._applyTransform();
+      return;
+    }
+
     panzoom.x = Math.max(0, (containerRect.width - bounds.width) / 2) - bounds.minX;
     panzoom.y = 30;
     panzoom._applyTransform();
@@ -139,13 +161,19 @@ function computePositions(entries) {
 function computeBounds(positions, routes) {
   let minX = Infinity;
   let maxX = -Infinity;
-  for (const { x } of positions.values()) {
+  let minY = Infinity;
+  let maxY = -Infinity;
+  for (const { x, y } of positions.values()) {
     minX = Math.min(minX, x);
     maxX = Math.max(maxX, x + NODE_WIDTH);
+    minY = Math.min(minY, y);
+    maxY = Math.max(maxY, y + NODE_HEIGHT);
   }
   if (!Number.isFinite(minX)) {
     minX = 0;
     maxX = 0;
+    minY = 0;
+    maxY = 0;
   }
   if (routes?.rightLaneCount) {
     maxX = Math.max(maxX, maxX + LANE_MARGIN + (routes.rightLaneCount - 1) * LANE_GAP + LANE_MARGIN);
@@ -153,7 +181,7 @@ function computeBounds(positions, routes) {
   if (routes?.leftLaneCount) {
     minX = Math.min(minX, minX - LANE_MARGIN - (routes.leftLaneCount - 1) * LANE_GAP - LANE_MARGIN);
   }
-  return { minX, maxX, width: maxX - minX };
+  return { minX, maxX, minY, maxY, width: maxX - minX, height: maxY - minY };
 }
 
 /**
