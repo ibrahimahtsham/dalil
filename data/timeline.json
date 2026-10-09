@@ -9002,5 +9002,206 @@
         "gist": "Our Lord, grant us good in this world and good in the Hereafter, and protect us from the punishment of the Fire."
       }
     ]
+  },
+  {
+    "id": "taghut",
+    "name": "Taghut (False Objects of Worship)",
+    "category": "belief",
+    "era": "Allah's Nature and the Unseen",
+    "summary": "The Quran pairs rejecting taghut, false deities or powers obeyed in defiance of Allah, with believing in Allah as the condition for grasping what it calls the most trustworthy handhold, one that never breaks.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Baqarah 2:256",
+        "url": "https://quran.com/2/256",
+        "gist": "States that whoever rejects taghut and believes in Allah has grasped the most trustworthy handhold, which does not break."
+      }
+    ]
+  },
+  {
+    "id": "martyrdom",
+    "name": "The Status of Those Killed in Allah's Cause",
+    "category": "belief",
+    "era": "Allah's Nature and the Unseen",
+    "summary": "The Quran instructs never to think of those killed in Allah's cause as dead; rather, they are alive with their Lord, well provided for.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Imran 3:169",
+        "url": "https://quran.com/3/169",
+        "gist": "Instructs never thinking of those killed in Allah's cause as dead; they are alive with their Lord, well provided for."
+      }
+    ]
+  },
+  {
+    "id": "brotherhood-ukhuwwah",
+    "name": "Ukhuwwah (Brotherhood in Faith)",
+    "category": "character",
+    "era": "Foundational",
+    "summary": "The Quran states plainly that the believers are but one brotherhood, instructing that peace be made between brothers in a dispute.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Hujurat 49:10",
+        "url": "https://quran.com/49/10",
+        "gist": "States the believers are but one brotherhood, and instructs making peace between them."
+      }
+    ]
+  },
+  {
+    "id": "trustworthiness-amanah",
+    "name": "Amanah (Trustworthiness in Daily Dealings)",
+    "category": "character",
+    "era": "Foundational",
+    "summary": "The Quran commands returning trusts to those to whom they are due, paired in the same verse with judging between people fairly. This is the practical, everyday sense of amanah, distinct from the cosmic Trust offered to the heavens and earth covered separately under Beliefs.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah An-Nisa 4:58",
+        "url": "https://quran.com/4/58",
+        "gist": "Commands returning trusts to their rightful owners, and judging between people with fairness."
+      }
+    ]
+  },
+  {
+    "id": "cleanliness",
+    "name": "Cleanliness as Part of Faith",
+    "category": "character",
+    "era": "Foundational",
+    "summary": "The Prophet taught that purification is half of faith, tying physical cleanliness directly to religious practice rather than treating it as a separate matter.",
+    "references": [
+      {
+        "type": "hadith",
+        "label": "Sahih Muslim 223",
+        "url": "https://sunnah.com/muslim:223",
+        "gist": "The Prophet states that purification is half of faith."
+      }
+    ]
+  },
+  {
+    "id": "cooperation-taawun",
+    "name": "Ta'awun (Cooperation in Good)",
+    "category": "character",
+    "era": "Foundational",
+    "summary": "The Quran instructs cooperating with one another in righteousness and piety, and explicitly forbids cooperating in sin and transgression.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Ma'idah 5:2",
+        "url": "https://quran.com/5/2",
+        "gist": "Instructs cooperating in righteousness and piety, and forbids cooperating in sin and transgression."
+      }
+    ]
+  },
+  {
+    "id": "contentment-qanaah",
+    "name": "Qana'ah (Contentment)",
+    "category": "character",
+    "era": "Foundational",
+    "summary": "The Prophet taught that true richness is not having abundant possessions, but the contentment of the soul.",
+    "references": [
+      {
+        "type": "hadith",
+        "label": "Sahih al-Bukhari 6446",
+        "url": "https://sunnah.com/bukhari:6446",
+        "gist": "The Prophet states that richness is not abundant possessions, but the richness of the soul."
+      }
+    ]
+  },
+  {
+    "id": "zuhd",
+    "name": "Zuhd (Detachment From the World)",
+    "category": "character",
+    "era": "Foundational",
+    "summary": "The Prophet told Ibn Umar to be in this world as though a stranger or a traveler passing through, advice Ibn Umar applied by not counting on tomorrow when evening came, nor on evening when morning came.",
+    "references": [
+      {
+        "type": "hadith",
+        "label": "Sahih al-Bukhari 6416",
+        "url": "https://sunnah.com/bukhari:6416",
+        "gist": "The Prophet tells Ibn Umar to be in this world as a stranger or a passing traveler."
+      }
+    ]
+  },
+  {
+    "id": "bequests-wasiyyah",
+    "name": "Wasiyyah (Bequests)",
+    "category": "law",
+    "era": "Family and Property",
+    "summary": "The Quran originally prescribed leaving a bequest for parents and close relatives; scholars hold this general instruction was later refined once the fixed inheritance shares were revealed. What continues in practice, and what the Prophet addressed directly, is bequeathing up to a third of one's estate, with the Prophet advising that even a third is a lot, and that leaving one's heirs well provided for is better than leaving them poor.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Baqarah 2:180",
+        "url": "https://quran.com/2/180",
+        "gist": "Originally prescribes a bequest for parents and close relatives when death approaches, with fairness."
+      },
+      {
+        "type": "hadith",
+        "label": "Sahih al-Bukhari 2742",
+        "url": "https://sunnah.com/bukhari:2742",
+        "gist": "The Prophet tells Sa'd a third may be bequeathed, though even a third is a lot, and leaving heirs wealthy is better than leaving them poor."
+      }
+    ]
+  },
+  {
+    "id": "tawaf",
+    "name": "Tawaf (Circling the Kaaba)",
+    "category": "duty",
+    "era": "Pillar of Islam",
+    "summary": "The Quran instructs pilgrims, after completing their rites, to circle the Ancient House as part of Hajj and Umrah.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Hajj 22:29",
+        "url": "https://quran.com/22/29",
+        "gist": "Instructs pilgrims to groom themselves, fulfill their vows, and circle the Ancient House."
+      }
+    ]
+  },
+  {
+    "id": "muqattaat",
+    "name": "Al-Muqatta'at (The Disjointed Letters)",
+    "category": "quran",
+    "era": "Foundational",
+    "summary": "Twenty-nine surahs open with isolated Arabic letters, such as Alif-Lam-Meem at the start of Al-Baqarah, whose meaning the Quran itself never explains. Their significance is left to Allah's knowledge alone, and this site does not speculate beyond that.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Baqarah 2:1",
+        "url": "https://quran.com/2/1",
+        "gist": "Opens with the disjointed letters Alif-Lam-Meem, a pattern repeated at the start of many surahs."
+      }
+    ]
+  },
+  {
+    "id": "parables-mathal",
+    "name": "Mathal (The Quran's Use of Parables)",
+    "category": "quran",
+    "era": "Foundational",
+    "summary": "The Quran states that Allah does not hesitate to use a parable of even a mosquito, or something smaller, to convey a point, naming its own use of comparison as a deliberate teaching method rather than mere illustration.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Baqarah 2:26",
+        "url": "https://quran.com/2/26",
+        "gist": "States Allah does not hesitate to use the parable of a mosquito, or something smaller, to make a point."
+      }
+    ]
+  },
+  {
+    "id": "abrogation-naskh",
+    "name": "Naskh (Abrogation)",
+    "category": "quran",
+    "era": "Foundational",
+    "summary": "The Quran states that whenever a verse is abrogated or caused to be forgotten, Allah brings one better or similar in its place, establishing the concept directly rather than leaving it purely to later juristic inference.",
+    "references": [
+      {
+        "type": "quran",
+        "label": "Surah Al-Baqarah 2:106",
+        "url": "https://quran.com/2/106",
+        "gist": "States that whenever a verse is abrogated or forgotten, Allah brings one better or similar in its place."
+      }
+    ]
   }
 ]
